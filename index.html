@@ -1,156 +1,53 @@
-<html lang="vi">
-<head>
-<title>Công Hưng</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, us-scalable=yes"> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="gwt:property" content="locale=vi">
-<meta name="description" content="Kỷ niệm ngày cưới công hưng>
-<meta property="og:image" content="preview.jpg">
-<link rel='stylesheet' href='style.css' type='text/css' media='all' />
-</head>
-<body>
-<style type="text/css">body {
-	overflow: hidden;
-}
-#marquee{
-    height: 400px;
-    width: 400px;
-    position: absolute;
-    top: 130px;
-    left: 10px;
-    z-index: 10;
-    float: left;
-}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Công Hưng</title>
 
-#texttyping{
-    width: 500px;
-    margin: 20px 10px 20px 100px;
-    font-weight: bold;
-    position: absolute;
-    top: 150px;
-    left: 30px;
-    float: left;
-}
-</style>
-<script type="text/javascript" charset="utf-8">
-    function hasClassName(inElement, inClassName)
-    {
-        var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
-        return regExp.test(inElement.className);
-    }
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no" name="viewport" />
 
-    function addClassName(inElement, inClassName)
-    {
-        if (!hasClassName(inElement, inClassName))
-            inElement.className = [inElement.className, inClassName].join(' ');
-    }
-
-    function removeClassName(inElement, inClassName)
-    {
-        if (hasClassName(inElement, inClassName)) {
-            var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
-            var curClasses = inElement.className;
-            inElement.className = curClasses.replace(regExp, ' ');
+    <link href="static/dist/semantic-ui/semantic.min.css" rel="stylesheet" type="text/css" />
+    <link href="static/stylesheets/default.css" rel="stylesheet" type="text/css" />
+    <link href="static/stylesheets/one.css" rel="stylesheet" type="text/css" />
+    <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" />-->
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+ <body onclick="playMusic()">
+    <audio id="divAudio">
+      <source src="mega.mp3" type="audio/mp3">
+    </audio>
+    <script>
+      var vAudio = document.getElementById("divAudio");
+      var hasInit = false;
+      function playMusic()
+      {
+        if(!hasInit)
+        {
+          hasInit = true;
+          vAudio.play();
         }
-    }
-
-    function toggleClassName(inElement, inClassName)
-    {
-        if (hasClassName(inElement, inClassName))
-            removeClassName(inElement, inClassName);
-        else
-            addClassName(inElement, inClassName);
-    }
-
-    function toggleShape()
-    {
-      var shape = document.getElementById('shape');
-      if (hasClassName(shape, 'cube') || hasClassName(shape, 'autoLoad')) {
-		if (hasClassName(shape, 'cube')) {
-			removeClassName(shape, 'cube');
-		}
-		if (hasClassName(shape, 'autoLoad')) {
-			removeClassName(shape, 'autoLoad');
-		}
-        addClassName(shape, 'ring');
-      } else {
-        removeClassName(shape, 'ring');
-        addClassName(shape, 'cube');
       }
-      
-      var stage = document.getElementById('stage');
-      if (hasClassName(shape, 'ring'))
-        stage.style.webkitTransform = 'translateZ(-200px)';
-      else
-        stage.style.webkitTransform = '';
-    }
-	var count = 0;
-	var timerr;
-	function timedCount() {
-		if(count >= 8) {
-			count = 0;
-			autoLoad();
-		} else {
-			count = count + 1;
-		}
-		timerr = setTimeout(timedCount, 1000);
-	}
-	function autoLoad() {
-		var shapeTest = document.getElementById('shape');
-		if (hasClassName(shapeTest, 'cube')) {
-			removeClassName(shapeTest, 'cube');
-			addClassName(shapeTest, 'autoLoad');
-		} else {
-			toggleShape();
-		}
-	}
-	timedCount()
-  </script>
-<div id="container">
-<div id="stage" style="">
-<div class="backfaces  cube" id="shape">
-<div class="plane one"></div>
+    </script>
 
-<div class="plane two"></div>
-
-<div class="plane three"></div>
-
-<div class="plane four"></div>
-
-<div class="plane five"></div>
-
-<div class="plane six"></div>
-
-<div class="plane seven"></div>
-
-<div class="plane eight"></div>
-
-<div class="plane nine"></div>
-
-<div class="plane ten"></div>
-
-<div class="plane eleven"></div>
-
-<div class="plane twelve"></div>
-</div>
-</div>
-</div>
-
-<div style="position: absolute;top: 800px;left: 350px;height: 60px;width: 600px;">
-<audio __idm_id__="36355073" autoplay="" controls="" loop=""><source src="nhac.mp3" type="audio/mpeg" /></audio>
-</div>
-
-<div id="marquee"><marquee direction="up" onmouseout="this.start()" onmouseover="this.stop()" scrollamount="1" scrolldelay="60"> <font color="DAA520" face="tahoma" size="6"><b> C&ocirc;ng Hưng<br />
-April 6th, 2006<br />
-Thị trấn hồ<br />
-Thuận thành<br/>
-Bắc Ninh</b></font><br />
-<br />
-&nbsp;
-<div id="texttyping"></div>
-<font color="DAA520" face="tahoma" size="6"><b></b></font></marquee></div>
-
-<script type="text/javascript" src="/hoamai-hoadao.js"></script>
-</body>
+    <div class="ui inverted vertical center aligned segment">
+      <div class="ui container">
+        <div class="ui massive borderless inverted menu">
+          <h1 class="header item">
+            Công Hưng
+          </h1>
+          <div class="right item">
+            <div class="ui massive secondary inverted pointing menu">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui text container">
+        <h1 class="ui inverted header">
+		
+        </h1>
+	<p>click anywhere</p>
+      </div>
+    </div>
+  </body>
 </html>
